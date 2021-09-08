@@ -4,8 +4,9 @@ import InfoCard from '../components/InfoCard'
 import { useRouter } from 'next/dist/client/router'
 import { format } from 'date-fns'
 import Map from '../components/Map'
+import { searchResults } from '../data/searchResultData'
 
-const Search = ({ searchResults }) => {
+const Search = () => {
   const router = useRouter()
 
   const { location, startDate, endDate, numGuests } = router.query
@@ -64,13 +65,13 @@ const Search = ({ searchResults }) => {
 export default Search
 
 export async function getServerSideProps() {
-  const searchResults = await fetch('https://links.papareact.com/isz').then(
+  const testSearchResults = await fetch('https://links.papareact.com/isz').then(
     res => res.json()
   )
 
   return {
     props: {
-      searchResults,
+      testSearchResults,
     },
   }
 }

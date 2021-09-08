@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import ReactMapGL, { Marker, Popup } from 'react-map-gl'
 import getCenter from 'geolib/es/getCenter'
+import { searchResults } from '../data/searchResultData'
 
-const Map = ({ searchResults }) => {
+const Map = () => {
   const [selectedLocation, setSelectedLocation] = useState({})
 
   const coords = searchResults.map(result => ({

@@ -11,6 +11,7 @@ import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import { DateRangePicker } from 'react-date-range'
 import { useRouter } from 'next/dist/client/router'
+import logo from '../assets/airbnb_logo.png'
 
 const Header = ({ placeholder }) => {
   const [searchInput, setSearchInput] = useState('')
@@ -53,7 +54,7 @@ const Header = ({ placeholder }) => {
         className='relative flex items-center h-10 cursor-pointer my-auto'
       >
         <Image
-          src='https://links.papareact.com/qd3'
+          src={logo}
           layout='fill'
           objectFit='contain'
           objectPosition='left'

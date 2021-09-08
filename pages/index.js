@@ -5,8 +5,11 @@ import Header from '../components/Header'
 import LargeCard from '../components/LargeCard'
 import MediumCard from '../components/MediumCard'
 import SmallCard from '../components/SmallCard'
+import outdoors from '../assets/gratest_outdoors.png'
+import { smallCardData } from '../data/smallCardData'
+import { mediumCardData } from '../data/mediumCardData'
 
-export default function Home({ exploreData, liveAnywhereData }) {
+export default function Home() {
   return (
     <div className=''>
       <Head>
@@ -23,7 +26,7 @@ export default function Home({ exploreData, liveAnywhereData }) {
 
           {/* Pull data from server */}
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-            {exploreData?.map(data => (
+            {smallCardData?.map(data => (
               <SmallCard
                 key={data.img}
                 img={data.img}
@@ -37,7 +40,7 @@ export default function Home({ exploreData, liveAnywhereData }) {
         <section>
           <h2 className='text-4xl font-semibold py-8'>Live Anywhere</h2>
           <div className='flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3'>
-            {liveAnywhereData?.map(data => (
+            {mediumCardData?.map(data => (
               <MediumCard key={data.img} img={data.img} title={data.title} />
             ))}
           </div>
@@ -45,7 +48,7 @@ export default function Home({ exploreData, liveAnywhereData }) {
 
         <section>
           <LargeCard
-            img='https://links.papareact.com/4cj'
+            img={outdoors}
             title='The Greatest Outdoors'
             description='Wishlists curated by Airbmb'
             buttonText='Get Inspired'
